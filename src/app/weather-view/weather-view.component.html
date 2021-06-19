@@ -1,0 +1,37 @@
+<br />
+<div style="text-align: center">
+  <h2>{{ title }}</h2>
+</div>
+<div
+  class="d-flex justify-content-center"
+  *ngIf="this.LocationInfo.length == 0"
+>
+  <div class="spinner-border" role="status">
+    <span class="sr-only"></span>
+  </div>
+</div>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div *ngFor="let info of LocationInfo.slice(0, 3)" class="col">
+    <div class="card" style="text-align: center; background-color: whitesmoke">
+      <br />
+      <h1>
+        {{ getDayName(info.applicable_date) }}
+        {{ getDate(info.applicable_date) }}
+      </h1>
+      <div class="card-body">
+        <img src="{{ info.icon }}" style="width: 50px; height: 50px" />
+        <h2>{{ info.weather_state_name }}</h2>
+        <img
+          src="{{ calcAverageTemp(info) }}"
+          style="width: 30px; height: 30px"
+        />
+        <h2>
+          {{ info.min_temp.toFixed(2) }}&#8451; -
+          {{ info.max_temp.toFixed(2) }}&#8451;
+        </h2>
+        <img src="{{ humidityI }}" style="width: 17px; height: 17px" />
+        <h2>{{ info.humidity }}&#37;</h2>
+      </div>
+    </div>
+  </div>
+</div>

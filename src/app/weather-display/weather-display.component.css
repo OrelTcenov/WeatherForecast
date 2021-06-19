@@ -1,0 +1,16 @@
+.options:hover {
+  cursor: pointer;
+  background-color: lightskyblue;
+}
+.form-control {
+  width: 50%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+.ng-autocomplete {
+  width: 100%;
+  max-width: 600px;
+  display: table;
+  margin: 0 auto;
+}
